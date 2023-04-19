@@ -24,7 +24,20 @@ public:
     int f;
 };
 
-
+//конструктор
+mainw::mainw()
+{
+/* определяем свойства окна */
+     this->resize(1000,600);
+     this->move(100, 100);
+     this->setWindowTitle("Рисунок");
+     QPalette pl; //объект палитра необходим для заданимя фона окна
+     pl.setColor(QPalette::Background, QColor(100, 200, 200)); //определить цвет
+     this->setAutoFillBackground(true); //фон окна заливается автоматически
+     this->setPalette(pl); //устанавливаем фон окна
+     this->setMouseTracking(true); //отслеживаем движение мыши
+     f = 0;
+}
 
 int main(int argc, char *argv[])
 {
