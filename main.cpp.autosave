@@ -52,6 +52,18 @@ void mainw::paintEvent(QPaintEvent *event)
     }
 }
 
+//обработка движения мыши
+void mainw::mouseMoveEvent(QMouseEvent *event)
+{
+    if(!f)return; //запрет на рисование?
+    this->pos = event->pos(); //положение курсора мыши
+    qp qp1;
+    qp1.pos = this->pos;
+    qp1.fl = 0;
+    vcp.append(qp1); //добавили в массив для рисования
+    this->update();  //обновить экран
+}
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
