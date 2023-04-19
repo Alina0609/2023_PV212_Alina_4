@@ -92,9 +92,10 @@ void mainw::mouseReleaseEvent(QMouseEvent * e)
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-
-    return a.exec();
+    QApplication a(argc, argv); //создаем объект для управления событиями приложения
+    mainw * sw = new mainw();
+    /*показать окно*/
+    sw->show();
+    /* запуск обработки событий */
+    return a.exec(); //цикл обработки событий (в том числе закрытие приложения)
 }
